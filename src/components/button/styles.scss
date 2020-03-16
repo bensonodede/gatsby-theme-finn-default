@@ -1,0 +1,49 @@
+.btn {
+  color: #fff;
+  background-color: #356ee1;
+  border: solid 1px #356ee1;
+  padding: 0.7rem 1.25rem;
+  font-size: 1rem;
+  font-family: "Airbnb Cereal App Medium";
+  border-radius: 0.25rem;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn:active {
+  color: #356ee1;
+  border: solid 1px #356ee1;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.btn--outline {
+  border: solid 1px #484848;
+  color: #484848;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.btn--outline:active {
+  background-color: #484848;
+  border: solid 1px #484848;
+  color: #ffffff;
+}
+
+.btn--is-small {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+  border-radius: 0.2rem;
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+.btn--disabled {
+  opacity: 0.5;
+}

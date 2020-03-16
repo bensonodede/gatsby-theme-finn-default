@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit !important;
+}
+
+/***** Customize Bulma variables *****/
+
+// Screen size variables
+$tablet: 568px;
+
+// Font family variables
+$title-family: "Airbnb Cereal App Medium";
+$subtitle-family: "Airbnb Cereal App Light";
+$button-family: "Airbnb Cereal App Medium";
+$family-sans-serif: "Airbnb Cereal App Light";
+
+// Color variables
+$primary: #f36b7f;
+$grey-darker: #484848;
+$grey-light: #787878;
+
+/***** Import Bulma sass modules *****/
+
+// Bulma base modules
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/helpers.sass";
+@import "~bulma/sass/base/generic.sass";
+
+// Bulma layout
+@import "~bulma/sass/grid/columns.sass";
+
+// Bulma elements
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/elements/content.sass";

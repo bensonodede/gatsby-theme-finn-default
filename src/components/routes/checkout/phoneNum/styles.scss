@@ -1,0 +1,29 @@
+@import "pages/index.scss";
+
+.phone-num {
+  @include mobile {
+    padding-top: 2.5rem;
+  }
+  padding-bottom: 5rem;
+  padding-top: 6.5rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.phone-num-field {
+  margin: 2rem 0rem;
+}
+
+.phone-num-footer {
+  @include mobile {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    padding: 1.25rem;
+    background-color: transparent;
+  }
+
+  position: relative;
+  z-index: 3;
+}
