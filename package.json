@@ -1,6 +1,6 @@
 {
   "name": "@magicfinn/gatsby-theme-finn-default",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Finn default gatsby theme",
   "main": "index.js",
   "author": "Benson Odede <bensonodede@gmail.com>",
