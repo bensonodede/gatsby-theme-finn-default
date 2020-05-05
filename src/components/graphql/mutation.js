@@ -5,20 +5,16 @@ const CREATE_ORDER = gql`
   mutation CreateOrder(
     $buyerNum: String!
     $storeUsername: String!
-    $productID: String!
+    $productId: String!
     $price: Float!
   ) {
     createOrder(
       buyerNum: $buyerNum
       storeUsername: $storeUsername
-      productID: $productID
+      productId: $productId
       price: $price
     ) {
       id
-      shortCode
-      password
-      timestamp
-      checkoutRequestID
     }
   }
 `;

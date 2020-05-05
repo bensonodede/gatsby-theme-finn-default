@@ -13,10 +13,10 @@ import { CREATE_ORDER } from "components/graphql/mutation";
 
 const ConfirmFooter = ({
   humanId,
-  productID,
+  productId,
   price,
   buyerNum,
-  storeUsername
+  storeUsername,
 }) => {
   // Destructure mutation hooks
   const [mutate, { loading, error, data }] = useMutation(CREATE_ORDER);
@@ -24,7 +24,7 @@ const ConfirmFooter = ({
   if (data) {
     setTimeout(() => {
       navigate(`/product/${humanId}/checkout/waiting`, {
-        state: { orderId: data.createOrder.id }
+        state: { orderId: data.createOrder.id },
       });
     }, 3700);
   }
@@ -41,7 +41,7 @@ const ConfirmFooter = ({
               isLight={true}
               onClick={() =>
                 mutate({
-                  variables: { productID, price, buyerNum, storeUsername }
+                  variables: { productId, price, buyerNum, storeUsername },
                 })
               }
             >
@@ -67,7 +67,7 @@ const ConfirmFooter = ({
                 isLight={true}
                 onClick={() =>
                   mutate({
-                    variables: { productID, price, buyerNum, storeUsername }
+                    variables: { productId, price, buyerNum, storeUsername },
                   })
                 }
               >

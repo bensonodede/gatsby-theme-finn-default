@@ -1,6 +1,6 @@
 {
   "name": "@magicfinn/gatsby-theme-finn-default",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "Finn default gatsby theme",
   "main": "index.js",
   "author": "Benson Odede <bensonodede@gmail.com>",
@@ -45,13 +45,13 @@
     "v8n": "1.3.3"
   },
   "peerDependencies": {
-    "gatsby": "2.19.41",
-    "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "gatsby": "2.20.36",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "gatsby": "2.19.41",
-    "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "gatsby": "2.20.36",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   }
 }

@@ -41,7 +41,7 @@ const Confirm = ({ humanId, location }) => {
               {/* Confirm footer */}
               <ConfirmFooter
                 humanId={humanId}
-                productID={id}
+                productId={id}
                 price={price}
                 buyerNum={phoneNum}
                 storeUsername={process.env.GATSBY_STORE_USERNAME}
