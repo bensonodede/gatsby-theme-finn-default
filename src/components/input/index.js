@@ -1,3 +1,6 @@
 import LabelInput from "./labelInput";
+import RadioInput from "./radioInput";
+import SearchInput from "./searchInput";
+import CounterInput from "./counterInput";
 
-export { LabelInput };
+export { LabelInput, RadioInput, SearchInput, CounterInput };

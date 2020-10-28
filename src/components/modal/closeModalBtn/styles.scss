@@ -1,0 +1,57 @@
+// Mobile close button
+
+.close-modal-btn__mobile {
+  display: inline-flex;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #484848;
+  outline: none;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.close-modal-btn__mobile:hover {
+  background-color: #f9f9f9;
+}
+
+.close-modal-btn__mobile:active {
+  background-color: #e5e5e5;
+}
+
+.close-modal-btn__mobile-icon {
+  display: flex !important;
+  width: 1.5rem;
+  color: inherit;
+}
+
+// Desktop close button
+
+.close-modal-btn__desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 0.6rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  color: #484848;
+  background-color: transparent;
+  font-size: 1.35rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}
+
+.close-modal-btn__desktop:hover {
+  color: #787878;
+}
+
+.close-modal-btn__desktop:active {
+  color: #d5d5d5;
+}

@@ -1,0 +1,101 @@
+@import "pages/index.scss";
+
+// Modal item
+
+.bag-modal__item {
+  display: flex;
+  flex-direction: row;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+}
+
+.bag-modal__item:active {
+  background-color: #e5e5e5;
+}
+
+.bag-modal__item:hover {
+  @include desktop {
+    background-color: #f9f9f9;
+  }
+}
+
+// Item Image
+
+.bag-modal__item-img-wrapper {
+  display: block;
+  width: 3rem;
+  height: 0;
+  border-radius: 0.5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  background: #f9f9f9;
+  flex-shrink: 0;
+}
+
+.bag-modal__item-img {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+// Item content
+
+.bag-modal__item-content {
+  margin-left: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bag-modal__item-content-description {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.bag-modal__item-description-wrapper {
+  width: 9rem;
+
+  // Small mobile screens
+  @media only screen and (max-width: 350px) {
+    width: 7rem;
+  }
+
+  @include tablet {
+    width: 14rem;
+  }
+}
+
+.bag-modal__item-description {
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bag-modal__item-description--variant {
+  color: #bbbbbb;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.bag-modal__item-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.bag-modal__item-price {
+  font-size: 0.925rem !important;
+  white-space: nowrap;
+}
+
+.bag-modal__item-currency {
+  font-size: 0.65rem;
+}

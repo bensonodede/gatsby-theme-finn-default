@@ -1,9 +1,11 @@
+@import "pages/index.scss";
+
 .btn {
   color: #fff;
   background-color: #356ee1;
   border: solid 1px #356ee1;
   padding: 0.7rem 1.25rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Airbnb Cereal App Medium";
   border-radius: 0.25rem;
   outline: none;
@@ -12,6 +14,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover {
+  @include desktop {
+    opacity: 0.9;
+  }
 }
 
 .btn:active {
@@ -46,4 +55,7 @@
 
 .btn--disabled {
   opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #787878;
+  border: #787878;
 }

@@ -11,6 +11,30 @@ const STORE_POLICY_QUERY = gql`
   }
 `;
 
+// Get store delivery query
+const STORE_DELIVERY_QUERY = gql`
+  query StoreQuery($storeUsername: String!) {
+    store(storeUsername: $storeUsername) {
+      id
+      storeLocation {
+        lat
+        lng
+      }
+      costPerKm
+      minDeliveryFee
+    }
+  }
+`;
+
+// Get number of products by a store
+const PRODUCTS_BY_STORE_COUNT_QUERY = gql`
+  query ProductsByStoreCountQuery($storeUsername: String!) {
+    productsByStoreCount(storeUsername: $storeUsername) {
+      count
+    }
+  }
+`;
+
 // Get all products from a store
 const PRODUCTS_FEED_QUERY = gql`
   query ProductsByStoreQuery(
@@ -26,25 +50,36 @@ const PRODUCTS_FEED_QUERY = gql`
       orderBy: $orderBy
     ) @connection(key: "productsByStore", filter: ["type"]) {
       id
-      humanId
       name
       price
-      imgUrl
-      updatedAt
+      imgUrls
     }
   }
 `;
 
-// Get a product by humanId
-const PRODUCT_HUMANID_QUERY = gql`
-  query ProdcutByHumanIdQuery($storeUsername: String!, $humanId: String!) {
-    productByHumanId(storeUsername: $storeUsername, humanId: $humanId) {
+// Get a product by ID
+const PRODUCT_QUERY = gql`
+  query ProductQuery($id: String!) {
+    product(id: $id) {
       id
-      humanId
       name
       price
-      imgUrl
       description
+      imgUrls
+      quantity
+      options {
+        id
+        title
+        tags
+      }
+      variants {
+        id
+        combinations
+        label
+        price
+        publish
+        quantity
+      }
     }
   }
 `;
@@ -72,7 +107,9 @@ const PAYMENT_POLL_QUERY = gql`
 
 export {
   STORE_POLICY_QUERY,
+  STORE_DELIVERY_QUERY,
+  PRODUCTS_BY_STORE_COUNT_QUERY,
   PRODUCTS_FEED_QUERY,
-  PRODUCT_HUMANID_QUERY,
-  PAYMENT_POLL_QUERY
+  PRODUCT_QUERY,
+  PAYMENT_POLL_QUERY,
 };

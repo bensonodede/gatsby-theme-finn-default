@@ -1,0 +1,27 @@
+@import "pages/index.scss";
+
+.product {
+  overflow: hidden;
+
+  @include mobile {
+    min-height: calc(100vh - 5rem);
+    padding-bottom: 5rem;
+  }
+
+  @include tablet {
+    min-height: calc(100vh - 12rem);
+    padding-top: 0rem;
+    padding-bottom: 5rem;
+  }
+
+  @include desktop {
+    min-height: calc(100vh - 12rem);
+    padding-top: 0rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.bullet-point {
+  display: flex;
+  flex-direction: row;
+}

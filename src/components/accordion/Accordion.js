@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TinyAccordion from "react-tiny-accordion";
+import AnimateHeight from "react-animate-height";
 
 // Import components
 import { Icon } from "react-icons-kit";
@@ -12,28 +12,29 @@ const Accordion = ({ header, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <TinyAccordion
-      transitionDuration={300}
-      className="accordion"
-      onChange={() => setIsOpen(!isOpen)}
-    >
+    <div className="accordion-wrapper">
+      {/* Accordion title */}
       <div
-        data-header={
-          <div className="accordion__header">
-            {header}
-
-            {/* Accordion icon */}
-            <div
-              className={`accordion__icon ${isOpen && `accordion__icon--open`}`}
-            >
-              <Icon icon={androidAdd} size={"100%"} />
-            </div>
-          </div>
-        }
+        className={`accordion-title ${isOpen ? "open" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
       >
-        {children}
+        {header}
+
+        {/* Accordion icon */}
+        <div
+          className={`accordion__icon${isOpen ? " accordion__icon--open" : ""}`}
+        >
+          <Icon icon={androidAdd} size={"100%"} />
+        </div>
       </div>
-    </TinyAccordion>
+
+      {/* Accordion content */}
+      <div className={`accordion-item${isOpen ? " accordion-item--open" : ""}`}>
+        <AnimateHeight duration={450} height={isOpen ? "auto" : 0}>
+          {children}
+        </AnimateHeight>
+      </div>
+    </div>
   );
 };
 

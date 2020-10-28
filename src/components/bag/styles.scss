@@ -1,0 +1,194 @@
+@import "pages/index.scss";
+
+// Bag icon
+
+.bag-icon__wrapper {
+  width: 2.9rem;
+  height: 2.9rem;
+  position: fixed;
+  top: 1rem;
+  right: 0.9rem;
+  border-radius: 100%;
+  z-index: 4;
+  background-color: #ffffff;
+  color: #484848;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  @include tablet {
+    width: 2.9rem;
+    height: 2.9rem;
+    top: 1.35rem;
+    right: 1.25rem;
+  }
+
+  @include desktop {
+    width: 3.05rem;
+    height: 3.05rem;
+    top: 1.5rem;
+    right: 2rem;
+  }
+}
+
+.bag-icon__wrapper:hover {
+  @include desktop {
+    background-color: #f9f9f9;
+  }
+}
+
+.bag-icon__wrapper:active {
+  background-color: #e5e5e5;
+}
+
+.bag-icon {
+  display: flex !important;
+  color: #484848;
+}
+
+.bag-icon__dot {
+  position: absolute;
+  top: -0.15rem;
+  left: -0.25rem;
+  background-color: #484848;
+  border-radius: 100%;
+  height: 1rem;
+  width: 1rem;
+  padding: 0.065rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+
+  @include desktop {
+    top: -0.35rem;
+    left: -0.45rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    padding: 0.045rem;
+    font-size: 0.95rem;
+  }
+}
+
+// Modal styling
+
+.bag-modal__mobile-card {
+  height: 100vh;
+  border-radius: 0;
+}
+
+.bag-modal__close-btn {
+  display: inline-flex;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #484848;
+  outline: none;
+  margin-top: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 1.25rem;
+  margin-top: 0.95rem;
+  cursor: pointer;
+}
+
+.bag-modal__close-btn:active {
+  background-color: #e5e5e5;
+}
+
+.bag-modal__close-icon {
+  display: flex !important;
+  width: 1.5rem;
+  color: inherit;
+}
+
+.bag-modal__title {
+  margin-top: 0rem !important;
+  margin-bottom: 1.5rem !important;
+
+  @include desktop {
+    margin-bottom: 3.5rem !important;
+  }
+}
+
+// Modal empty
+
+.bag-modal__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 8rem);
+}
+
+.bag-modal__empty-btn {
+  margin-top: 1.5rem;
+}
+
+.bag-modal__description {
+  margin-top: 0.5rem;
+}
+
+// Modal list
+
+.bag-modal__list {
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.bag-modal__list-items {
+  margin-top: 2.5rem;
+}
+
+// Modal tally
+
+.bag-modal__tally {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  border-top: solid 1.2px #e5e5e5;
+  margin-top: 1.5rem;
+}
+
+// Modal footer
+
+.bag-modal__footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  z-index: 4;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  @include tablet {
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+  }
+}
+
+.bag-modal__footer-btn {
+  margin: 1rem 7.3%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+
+  @include tablet {
+    margin: 0rem 2.5%;
+    margin-top: 1rem;
+  }
+}

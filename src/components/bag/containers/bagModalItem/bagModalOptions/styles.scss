@@ -1,0 +1,62 @@
+@import "pages/index.scss";
+
+// Desktop card
+
+.bag-modal-options__desktop-modal {
+  @include tablet {
+    width: calc(60% - 2rem);
+  }
+
+  @include desktop {
+    width: calc(30% - 2rem);
+  }
+}
+
+// Options modal header
+
+.bag-modal-options__header {
+  border-bottom: solid 1px #d5d5d5;
+  padding: 1rem 1.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  color: #484848;
+}
+
+.bag-modal-options__title {
+  margin: 0rem 1rem;
+  margin-right: 0;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Modal body
+
+.bag-modal-options__body {
+  padding: 1rem 7%;
+  padding-top: 2rem;
+
+  @include desktop {
+    padding-bottom: 2rem;
+  }
+}
+
+// Delete
+
+.bag-modal-options__delete {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.bag-modal-options__delete-icon {
+  width: 1.2rem;
+  margin-right: 0.2rem;
+  display: flex !important;
+}

@@ -1,0 +1,30 @@
+@import "pages/index.scss";
+
+.order-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  z-index: 4;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  @include tablet {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.order-footer__button {
+  margin: 1rem 7.3%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  @include tablet {
+    margin: 2rem 0rem;
+  }
+}

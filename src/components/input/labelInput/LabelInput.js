@@ -13,7 +13,7 @@ const LabelInput = ({
   setFieldValue,
   setFieldTouched,
   errors,
-  validateField
+  validateField,
 }) => {
   const [focused, setFocused] = useState(false);
 
@@ -36,7 +36,7 @@ const LabelInput = ({
           onBlur={() => {
             setFocused(false);
           }}
-          onChange={async event => {
+          onChange={async (event) => {
             // Get input value
             let val = event.target.value;
 

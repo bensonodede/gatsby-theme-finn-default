@@ -3,16 +3,20 @@ import gql from "graphql-tag";
 // Create an order
 const CREATE_ORDER = gql`
   mutation CreateOrder(
-    $buyerNum: String!
+    $productTotal: Int!
+    $deliveryFee: Int!
+    $deliveryLocation: LocationInput!
+    $phoneNum: String!
+    $orderProducts: [OrderProductsInput!]!
     $storeUsername: String!
-    $productId: String!
-    $price: Float!
   ) {
     createOrder(
-      buyerNum: $buyerNum
+      productTotal: $productTotal
+      deliveryFee: $deliveryFee
+      deliveryLocation: $deliveryLocation
+      phoneNum: $phoneNum
+      orderProducts: $orderProducts
       storeUsername: $storeUsername
-      productId: $productId
-      price: $price
     ) {
       id
     }

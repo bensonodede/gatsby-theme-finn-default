@@ -1,0 +1,20 @@
+@import "pages/index.scss";
+
+.product-desktop__policy {
+  margin-top: 4rem;
+
+  @include tablet-only {
+    margin-top: 3rem;
+  }
+}
+
+.product-desktop__policy-item-description {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2.75rem;
+  margin-right: 0.5rem;
+}
+
+.product-desktop__policy-item-emoji {
+  margin-right: 0.5rem;
+}

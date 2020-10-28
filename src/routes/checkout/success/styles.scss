@@ -1,0 +1,48 @@
+@import "pages/index.scss";
+
+.success {
+  @include mobile {
+    padding-top: 2.5rem;
+  }
+  padding-bottom: 6rem;
+  padding-top: 6.5rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.success__header {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.success__sub-title {
+  margin: 0rem;
+  margin-top: 0.75rem;
+}
+
+.success__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+}
+
+.success__item-emoji {
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.success__item-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.success__item-description {
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-left: 2.5rem !important;
+}
+
+.success__button {
+  margin-top: 3.5rem;
+}

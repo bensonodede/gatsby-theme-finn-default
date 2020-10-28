@@ -1,0 +1,25 @@
+@import "pages/index.scss";
+
+.navbar {
+  max-width: calc(100% - 1.75rem);
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+
+  @include desktop {
+    max-width: 33%;
+    margin-top: 1.5rem;
+  }
+}
+
+.navbar__title {
+  text-transform: uppercase;
+  letter-spacing: 0.7rem;
+  padding: 1rem 0rem;
+  line-height: 1.25rem !important;
+  cursor: pointer;
+}
+
+.navbar__title:active {
+  background-color: #f9f9f9;
+}

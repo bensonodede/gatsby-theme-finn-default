@@ -1,0 +1,195 @@
+@import "pages/index.scss";
+
+// Product list image
+
+.product-desktop__img-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  overflow-x: auto;
+  overflow-y: scroll;
+  border-right: solid 1.25px #e5e5e5;
+}
+
+.product-desktop__img-list::-webkit-resizer,
+.product-desktop__img-list::-webkit-scrollbar-button,
+.product-desktop__img-list::-webkit-scrollbar-corner {
+  display: none;
+}
+
+.product-desktop__img-list::-webkit-scrollbar {
+  width: 3.5px;
+  overflow: overlay;
+}
+
+.product-desktop__img-list::-webkit-scrollbar-thumb {
+  box-shadow: #484848 0px 0px 12px inset;
+  color: #484848;
+  background-color: #484848;
+  border-radius: 0px;
+}
+
+.product-desktop__img-list::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+// Product desktop image
+
+.product-desktop__img-container {
+  display: block !important;
+  margin: 7rem auto;
+  height: 0;
+  width: 60%;
+  padding-bottom: 18.5rem;
+  position: relative;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @include tablet-only {
+    padding-bottom: 12.5rem;
+    margin: 5rem auto;
+  }
+}
+
+.product-desktop__img {
+  margin: auto;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+// Product desktop image overlay
+
+.product-desktop__img-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.product-desktop__img-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.product-desktop__img-overlay:active {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+// Product desktop image modal
+
+.product-desktop__img-modal-slider {
+  height: 60vh;
+  width: calc(100% - 12rem);
+  margin: auto;
+}
+
+.product-desktop__img-modal-container {
+  display: block;
+  padding-bottom: 60vh;
+  height: 0;
+  width: 100%;
+  position: relative;
+}
+
+.product-desktop__img-modal {
+  position: absolute;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+.product-desktop__img-modal-close {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 0.6rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  color: #484848;
+  background-color: transparent;
+  font-size: 1.35rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}
+
+.product-desktop__img-modal-close:hover {
+  color: #787878;
+}
+
+.product-desktop__img-modal-close:active {
+  color: #d5d5d5;
+}
+
+.product-desktop__img-modal-slider-counter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 12;
+  color: #484848;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0.5rem 0.6rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  border-radius: 0.25rem;
+}
+
+.product-desktop__img-modal-btn {
+  position: fixed;
+  top: 50%;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  width: 3.25rem;
+  padding: 0.25rem;
+  border-radius: 100%;
+  border: none;
+  color: #484848;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+}
+
+.product-desktop__img-modal-btn:hover {
+  background-color: #f9f9f9;
+}
+
+.product-desktop__img-modal-btn:active {
+  background-color: #e5e5e5;
+  height: 3rem;
+  width: 3rem;
+  transition: all 0.1s;
+}
+
+.product-desktop__img-modal-btn-icon {
+  display: flex !important;
+  width: 1rem;
+}
+
+.product-desktop__img-modal-btn--prev {
+  left: 0;
+  margin-left: 2rem;
+}
+.product-desktop__img-modal-btn--next {
+  right: 0;
+  margin-right: 2rem;
+}

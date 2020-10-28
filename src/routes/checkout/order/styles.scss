@@ -1,0 +1,39 @@
+@import "pages/index.scss";
+
+.order {
+  @include mobile {
+    padding-top: 2.5rem;
+  }
+  padding-bottom: 6rem;
+  padding-top: 6.5rem;
+  overflow: hidden;
+  display: flex;
+}
+
+// Order title
+
+.order__title {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem !important;
+
+  @include tablet {
+    margin-top: 0rem;
+    margin-bottom: 3.5rem !important;
+  }
+}
+
+// Order section
+
+.order__section {
+  margin-top: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: solid 1.2px #e5e5e5;
+}
+
+// Order sub-title
+
+.order__sub-title {
+  margin: 0 !important;
+  color: #bbbbbb !important;
+  font-weight: 600;
+}

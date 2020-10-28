@@ -1,0 +1,49 @@
+@import "pages/index.scss";
+
+// Order map
+
+.order-map {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  width: 100%;
+  height: 13rem;
+  background-color: #e5e5e5;
+  pointer-events: none;
+
+  @include tablet {
+    height: 15rem;
+  }
+
+  @include desktop {
+    height: 18rem;
+  }
+}
+
+.order-map__content {
+  margin-bottom: 1.5rem;
+}
+
+.order-map__sub-title {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0;
+}
+
+.destination-marker {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: solid 2px #ffffff;
+  border-radius: 100%;
+  background-color: #356ee1;
+  box-shadow: 0rem 0rem 0rem 0.5rem rgba(55, 112, 225, 0.25);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.origin-marker {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 100%;
+  background-color: #356ee1;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}

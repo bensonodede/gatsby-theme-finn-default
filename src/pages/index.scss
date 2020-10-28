@@ -1,3 +1,5 @@
+// Global styles
+
 body {
   margin: 0;
   white-space: pre-wrap;
@@ -7,10 +9,14 @@ a {
   color: inherit !important;
 }
 
-/***** Customize Bulma variables *****/
+.columns {
+  margin: 0 !important;
+}
+
+/***** Custom Bulma variables *****/
 
 // Screen size variables
-$tablet: 568px;
+$tablet: 768px;
 
 // Font family variables
 $title-family: "Airbnb Cereal App Medium";
@@ -37,3 +43,31 @@ $grey-light: #787878;
 @import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/title.sass";
 @import "~bulma/sass/elements/content.sass";
+
+/***** Import slick-carousel css modules *****/
+
+@import "~slick-carousel/slick/slick-theme.css";
+@import "~slick-carousel/slick/slick.css";
+
+/***** Fade up css-transition *****/
+
+.fadeUp-enter,
+.fadeUp-appear {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fadeUp-enter-active,
+.fadeUp-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.fadeUp-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fadeUp-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 300ms, transform 300ms;
+}

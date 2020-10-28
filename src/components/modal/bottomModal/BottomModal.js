@@ -7,8 +7,14 @@ import Modal from "../Modal";
 // Import styles
 import "./styles.scss";
 
-const BottomModal = ({ isOpen, toggleModal, children }) => (
-  <Modal isOpen={isOpen} toggleModal={toggleModal}>
+const BottomModal = ({
+  isOpen,
+  toggleModal,
+  children,
+  cardClassName = "",
+  onScroll = null,
+}) => (
+  <Modal onScroll={onScroll}>
     {/* Modal background */}
     <CSSTransition
       appear={true}
@@ -26,11 +32,13 @@ const BottomModal = ({ isOpen, toggleModal, children }) => (
           in={isOpen}
           classNames="bottom-modal__card-animation"
           timeout={500}
-          onClick={e => {
+          onClick={(e) => {
             e.stopPropagation();
           }}
         >
-          <div className="bottom-modal__card">{children}</div>
+          <div className={`bottom-modal__card ${cardClassName}`}>
+            {children}
+          </div>
         </CSSTransition>
         {/* End Modal card */}
       </div>

@@ -1,20 +1,39 @@
-.accordion {
+@import "pages/index.scss";
+
+.accordion-wrapper {
   border-bottom: solid 1px #e5e5e5;
-  padding: 1.5rem 0rem;
-  cursor: pointer;
 }
 
-.accordion:focus,
-.accordion:active {
-  outline: none;
+.accordion-item {
+  overflow: hidden;
+  opacity: 0;
+
+  transition: all 0.45s ease;
+  -webkit-transition: all 0.45s ease;
+  -moz-transition: all 0.45s ease;
 }
 
-.accordion__header {
+.accordion-item--open {
+  opacity: 1;
+}
+
+.accordion-title {
+  padding: 1.5rem 0.5rem;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  color: #787878;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.accordion-title:hover {
+  @include desktop {
+    background-color: #f9f9f9;
+  }
+}
+
+.accordion-title:active {
+  background-color: #e5e5e5;
 }
 
 .accordion__icon {
@@ -23,9 +42,9 @@
   margin-left: 0.75rem;
   flex-shrink: 0;
 
-  transition: all 0.25s linear;
-  -webkit-transition: all 0.25s linear;
-  -moz-transition: all 0.25s linear;
+  transition: all 0.45s ease;
+  -webkit-transition: all 0.45s ease;
+  -moz-transition: all 0.45s ease;
 }
 
 .accordion__icon--open {

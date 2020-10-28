@@ -7,8 +7,8 @@ import Modal from "../Modal";
 // Import styles
 import "./styles.scss";
 
-const CenterModal = ({ isOpen, toggleModal, children }) => (
-  <Modal isOpen={isOpen} toggleModal={toggleModal}>
+const CenterModal = ({ isOpen, toggleModal, children, cardClassName = "" }) => (
+  <Modal>
     {/* Modal background */}
     <CSSTransition
       appear={true}
@@ -26,11 +26,13 @@ const CenterModal = ({ isOpen, toggleModal, children }) => (
           in={isOpen}
           classNames="center-modal__card-animation"
           timeout={500}
-          onClick={e => {
+          onClick={(e) => {
             e.stopPropagation();
           }}
         >
-          <div className="center-modal__card">{children}</div>
+          <div className={`center-modal__card ${cardClassName}`}>
+            {children}
+          </div>
         </CSSTransition>
         {/* End Modal card */}
       </div>
