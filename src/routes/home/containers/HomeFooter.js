@@ -13,7 +13,7 @@ const HomeFooter = () => (
 
           {/* Footer link to Finn */}
           <a
-            href={"https://magicfinn.com"}
+            href={"https://withfinn.com"}
             target={"_blank"}
             rel="noopener noreferrer"
             className="home-footer__link"

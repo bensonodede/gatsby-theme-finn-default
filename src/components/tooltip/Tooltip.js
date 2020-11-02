@@ -12,7 +12,7 @@ const Tooltip = forwardRef(({ children, text, placement = "bottom" }, ref) => (
     content={text}
     arrow={false}
     animation={"fade"}
-    touch={"false"}
+    touch={false}
     theme={"light-tooltip"}
   >
     {children}
