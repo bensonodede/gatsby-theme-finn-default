@@ -36,7 +36,7 @@ const BagModalItem = ({ item, setShowRemovedToast }) => {
   return (
     <div className="bag-modal__item" onClick={toggleOptionsModal}>
       {/* Image */}
-      <BagModalItemImage imgUrl={imgUrl} />
+      <BagModalItemImage imgUrl={imgUrl} name={name}/>
 
       <div className="bag-modal__item-content">
         <div className="bag-modal__item-content-description">

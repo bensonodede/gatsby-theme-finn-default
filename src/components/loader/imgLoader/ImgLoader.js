@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import useStateWithCallback from "use-state-with-callback";
 import LazyLoad, { forceCheck } from "react-lazyload";
 import ExifOrientationImg from "react-exif-orientation-img";
 
@@ -29,12 +28,9 @@ const ImgLoader = ({
     cached: false,
     placeholder: "",
   });
-  const [loaded, setLoaded] = useStateWithCallback(false, () => {
-    // Execute function after load, if any.
-    if (onLoad) {
-      onLoad();
-    }
-  });
+
+  const [loaded, setLoaded] = useState(false);
+
 
   useEffect(() => {
     // On component mounted, set mounted state to true
@@ -98,6 +94,9 @@ const ImgLoader = ({
             onLoad={() => {
               if (_isMounted.current) {
                 setLoaded(true);
+                if(onLoad){
+                  onLoad()
+                }
               }
             }}
             alt={alt}

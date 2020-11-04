@@ -28,10 +28,12 @@ const Pagination = ({
       )}
 
       {/* Item count */}
-      <p className="has-text-grey-dark pagination__text">
-        Showing {itemSkipped + 1} - {itemSkipped + itemShownCount} of{" "}
-        {itemCount} items
-      </p>
+      {itemShownCount >= 1 && (
+        <p className="has-text-grey-dark pagination__text">
+          Showing {itemSkipped + 1} - {itemSkipped + itemShownCount} of{" "}
+          {itemCount} items
+        </p>
+      )}
     </div>
   );
 };

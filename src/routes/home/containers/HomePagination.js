@@ -21,7 +21,7 @@ const HomePagination = ({
       // If on home page and pagecount is one; disable btn
       // OR If Current page is equal to or more than total number of pages i.e last page
       isNextDisabled={
-        (!pageNumber && pageCount === 1) || parseInt(pageNumber) >= pageCount
+        (!pageNumber && pageCount <= 1) || parseInt(pageNumber) >= pageCount
       }
       prevFunction={() => {
         // If current page is 2, navigate home

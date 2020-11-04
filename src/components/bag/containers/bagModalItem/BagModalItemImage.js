@@ -3,7 +3,7 @@ import React from "react";
 // Import components
 import { ImgLoader } from "components/loader";
 
-const BagModalItemImage = ({ imgUrl }) => (
+const BagModalItemImage = ({ name, imgUrl }) => (
   <div className="bag-modal__item-img-wrapper">
     <ImgLoader
       transform={"c_thumb,g_center,r_8,w_48,h_48"}

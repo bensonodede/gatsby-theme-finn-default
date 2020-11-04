@@ -1,9 +1,8 @@
 const path = require("path");
 
+// PRODUCTION PLUGINS
 
-/**** PRODUCTION PLUGINS ****/
-
-const prodPlugins = [
+let prodPlugins = [
   // Enable sass files
   {
     resolve: "gatsby-plugin-sass",
@@ -25,10 +24,10 @@ const prodPlugins = [
   },
 ];
 
-/**** DEVELOPMENT PLUGINS ****/
+// DEVELOPMENT PLUGINS
 
-const devPlugins = [
-  // Allow absolute imports shortuct
+let devPlugins = [
+  // Allow absolute imports shortuct in sass
   {
     resolve: "gatsby-plugin-root-import",
     options: {
@@ -51,12 +50,14 @@ const devPlugins = [
   },
 ];
 
-// Define plugins in environment
+// Define global plugins object
 let plugins;
 
 if (process.env.NODE_ENV === "production") {
+  // Assign production plugins
   plugins = prodPlugins;
 } else {
+  // Assign development plugins
   plugins = [...prodPlugins, ...devPlugins];
 }
 

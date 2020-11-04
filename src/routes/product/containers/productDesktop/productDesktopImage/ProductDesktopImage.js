@@ -34,6 +34,7 @@ const ProductDesktopImage = () => {
         toggleModal={toggleModal}
         setCurrentSlide={setCurrentSlide}
         imgUrls={imgUrls}
+        name={name}
       />
 
       {/* Image modal */}

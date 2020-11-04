@@ -6,8 +6,12 @@ import { Formik, Form, Field } from "formik";
 import { useBag } from "components/useHooks";
 import { CounterInput } from "components/input";
 
-const BagModalOptionsQuantity = ({ item }) => (
-  <div>
+const BagModalOptionsQuantity = ({ item }) =>{
+  // Destructure bag hook
+  let { changeQuantity } = useBag();
+
+  return(
+    <div>
     <Formik
       initialValues={{ quantity: item.selectedQuantity }}
       validateOnChange={false}
@@ -15,9 +19,6 @@ const BagModalOptionsQuantity = ({ item }) => (
       onSubmit={null}
     >
       {(formikProps) => {
-        // Destructure bag hook
-        let { changeQuantity } = useBag();
-
         // Change quantity on value change
         useEffect(() => {
           changeQuantity(item, parseInt(formikProps.values.quantity));
@@ -43,6 +44,7 @@ const BagModalOptionsQuantity = ({ item }) => (
       }}
     </Formik>
   </div>
-);
+)
+} 
 
 export default BagModalOptionsQuantity;
