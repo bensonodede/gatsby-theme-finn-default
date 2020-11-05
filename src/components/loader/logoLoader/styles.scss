@@ -9,13 +9,11 @@
   align-items: center;
 }
 
-.logo-loader__title {
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.7rem;
-  padding: 1rem 0rem;
-  line-height: 1.25rem !important;
-  animation: fadeloop 1.35s ease-in-out infinite;
+.logo-loader__title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -0.7rem;
   width: 70%;
 
   @include tablet {
@@ -25,6 +23,15 @@
   @include desktop {
     width: 30%;
   }
+}
+
+.logo-loader__title {
+  text-transform: uppercase;
+  letter-spacing: 0.7rem;
+  margin-right: -0.7rem;
+  line-height: 1.25rem !important;
+  animation: fadeloop 1.35s ease-in-out infinite;
+  text-indent: 0.7rem;
 }
 
 @keyframes fadeloop {
