@@ -33,10 +33,14 @@
 }
 
 .product-mobile__img-slider-wrapper {
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   margin-top: 1rem;
   position: relative;
   background-color: #ffffff;
+}
+
+.product-mobile__img-slider-wrapper--single-img {
+  margin-bottom: 2rem;
 }
 
 // Product mobile image modal
@@ -114,7 +118,7 @@
 .swiper-container-horizontal > .swiper-scrollbar {
   position: absolute !important;
   left: 1% !important;
-  bottom: -33px !important;
+  bottom: -35px !important;
   z-index: 50 !important;
   width: 98% !important;
   touch-action: none;

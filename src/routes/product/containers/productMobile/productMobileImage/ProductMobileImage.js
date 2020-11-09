@@ -25,7 +25,13 @@ const ProductMobileImage = () => {
   const [isOpen, toggleModal] = useModal(false);
 
   return (
-    <div className="column is-10-mobile is-paddingless product-mobile__img-slider-wrapper">
+    <div
+      className={`column is-10-mobile is-paddingless product-mobile__img-slider-wrapper${
+        imgUrls.length === 1
+          ? " product-mobile__img-slider-wrapper--single-img"
+          : ""
+      }`}
+    >
       {/* Swiper slider */}
       <Swiper
         spaceBetween={10}
