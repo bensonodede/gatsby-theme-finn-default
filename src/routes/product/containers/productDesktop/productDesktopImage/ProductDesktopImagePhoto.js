@@ -5,7 +5,7 @@ import { ImgLoader } from "components/loader";
 
 const ProductDesktopImagePhoto = ({
   index,
-  setCurrentSlide,
+  setCurrentImgSlide,
   toggleModal,
   src,
   name,
@@ -15,7 +15,7 @@ const ProductDesktopImagePhoto = ({
     <div
       onClick={async () => {
         // Set current slide
-        await setCurrentSlide(index + 1);
+        await setCurrentImgSlide(index);
 
         // Toggle image modal
         await toggleModal();

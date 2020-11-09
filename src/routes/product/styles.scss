@@ -1,5 +1,11 @@
 @import "pages/index.scss";
 
+/***** Import Swiper styles *****/
+
+@import "~swiper/swiper.scss";
+@import "~swiper/components/scrollbar/scrollbar.scss";
+@import "~swiper/components/lazy/lazy.scss";
+
 .product {
   overflow: hidden;
 

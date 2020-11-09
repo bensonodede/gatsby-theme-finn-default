@@ -1,6 +1,6 @@
-import React, { useEffect, useContext, useState } from "react";
-import Slider from "react-slick";
-import { forceCheck } from "react-lazyload";
+import React, { useContext, useState } from "react";
+import SwiperCore, { Scrollbar, Lazy } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import product data context
 import ProductDataContext from "../../../ProductDataContext";
@@ -14,70 +14,50 @@ import ProductMobileImageModal from "./ProductMobileImageModal";
 import "./styles.scss";
 
 const ProductMobileImage = () => {
+  // Install Swiper components
+  SwiperCore.use([Scrollbar, Lazy]);
+
   // Destructure data
   const { name, imgUrls } = useContext(ProductDataContext);
 
-  // Force load images
-  useEffect(() => {
-    setTimeout(() => {
-      forceCheck();
-    }, 1000);
-  }, []);
-
   // Track current slide index
-  const [currentSlide, setCurrentSlide] = useState(1);
+  const [currentImgSlide, setCurrentImgSlide] = useState(0);
   const [isOpen, toggleModal] = useModal(false);
 
-  // React slick carousel settings
-  const slickSettings = {
-    lazyLoad: "ondemand",
-    arrows: false,
-    dots: false,
-    infinite: false,
-    initialSlide: 0,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    touchThreshold: 10,
-    className: "product-mobile__img-slider",
-    beforeChange: (oldIndex, newIndex) => {
-      setCurrentSlide(newIndex + 1);
-    },
-  };
-
   return (
-    <div className="column is-full-mobile is-paddingless product-mobile__img-slider-wrapper">
-      {/* Image slide count */}
-      <div className="product-mobile__img-slider-counter">
-        {currentSlide} / {imgUrls.length}
-      </div>
-
-      {/* Image slider */}
-      <Slider {...slickSettings}>
+    <div className="column is-10-mobile is-paddingless product-mobile__img-slider-wrapper">
+      {/* Swiper slider */}
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        onSlideChange={({ activeIndex }) => setCurrentImgSlide(activeIndex)}
+        lazy={{ loadPrevNext: true }}
+        scrollbar={{ draggable: true }}
+      >
         {imgUrls.map((imgUrl) => (
-          <div
-            key={imgUrl}
-            className="product-mobile__img-container"
-            onClick={() => {
-              toggleModal();
-            }}
-          >
-            {/* Image */}
-            <ImgLoader
-              src={imgUrl}
-              alt={name}
-              className={"product-mobile__img"}
-              height={17}
-            />
-          </div>
+          <SwiperSlide key={imgUrl}>
+            {({ isActive }) => (
+              <div
+                // prettier-ignore
+                className={`product-mobile__img-container${isActive ? " product-mobile__img-container--active" : ""}`}
+                onClick={() => toggleModal()}
+              >
+                <ImgLoader
+                  src={imgUrl}
+                  alt={name}
+                  className={`product-mobile__img`}
+                />
+              </div>
+            )}
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
 
       {/* Image modal */}
       <ProductMobileImageModal
         isOpen={isOpen}
         toggleModal={toggleModal}
-        currentIndex={currentSlide - 1}
+        currentImgSlide={currentImgSlide}
         imgUrls={imgUrls}
         name={name}
       />

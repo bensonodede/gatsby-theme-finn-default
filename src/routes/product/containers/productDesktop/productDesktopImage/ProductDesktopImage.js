@@ -24,7 +24,7 @@ const ProductDesktopImage = () => {
   }, []);
 
   // Track current slide index
-  const [currentSlide, setCurrentSlide] = useState(1);
+  const [currentImgSlide, setCurrentImgSlide] = useState(1);
   const [isOpen, toggleModal] = useModal(false);
 
   return (
@@ -32,7 +32,7 @@ const ProductDesktopImage = () => {
       {/* Image list */}
       <ProductDesktopImageList
         toggleModal={toggleModal}
-        setCurrentSlide={setCurrentSlide}
+        setCurrentImgSlide={setCurrentImgSlide}
         imgUrls={imgUrls}
         name={name}
       />
@@ -41,7 +41,7 @@ const ProductDesktopImage = () => {
       <ProductDesktopImageModal
         isOpen={isOpen}
         toggleModal={toggleModal}
-        currentIndex={currentSlide - 1}
+        currentImgSlide={currentImgSlide}
         imgUrls={imgUrls}
         name={name}
       />

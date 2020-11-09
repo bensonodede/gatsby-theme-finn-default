@@ -11,39 +11,32 @@
 
 .product-mobile__img-container {
   display: block !important;
-  padding-bottom: 17rem;
+  padding-bottom: 12rem;
   height: 0;
   width: 100%;
   position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.35s;
+  opacity: 0.6;
 }
 
-.product-mobile__img-slider {
-  height: 17rem;
-  display: flex !important;
-  flex-direction: column;
-  background-color: #fafafa;
-  z-index: 2;
+.product-mobile__img-container--active {
+  opacity: 1;
+  padding-bottom: 14rem;
+  transition: all 0.35s;
+}
+
+.product-mobile__img-container:active {
+  opacity: 0.75;
+  transition: all 0s;
 }
 
 .product-mobile__img-slider-wrapper {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
   position: relative;
   background-color: #ffffff;
-}
-
-.product-mobile__img-slider-counter {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 3;
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.65rem;
-  margin-right: 1.25rem;
-  margin-bottom: 0.95rem;
-  border-radius: 0.25rem;
-  background-color: rgba(0, 0, 0, 0.45);
 }
 
 // Product mobile image modal
@@ -84,10 +77,6 @@
   margin-top: 0.95rem;
 }
 
-.product-mobile__img-modal-close-icon:hover {
-  color: #787878;
-}
-
 .product-mobile__img-modal-close-icon:active {
   color: #d5d5d5;
 }
@@ -104,4 +93,44 @@
   margin-right: 1.25rem;
   margin-top: 0.95rem;
   border-radius: 0.25rem;
+}
+
+// Swiper mobile override styling
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-container {
+  overflow: visible !important;
+  height: 15rem;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-container-horizontal > .swiper-scrollbar {
+  position: absolute !important;
+  left: 1% !important;
+  bottom: -33px !important;
+  z-index: 50 !important;
+  width: 98% !important;
+  touch-action: none;
+}
+
+.swiper-scrollbar {
+  border-radius: 0px !important;
+  height: 1.25px !important;
+  background: #e5e5e5 !important;
+  touch-action: none;
+}
+
+.swiper-scrollbar-drag {
+  border-radius: 0px !important;
+  height: 3px !important;
+  background: #484848 !important;
+  top: -2.5px !important;
+  touch-action: none;
 }

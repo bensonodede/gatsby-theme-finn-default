@@ -16,6 +16,7 @@ import ProductOptionsModal from "../productOptionsModal";
 
 // Import functions
 import { getTotalQuantity } from "../utils";
+import Navbar from "components/navbar";
 
 const ProductMobile = () => {
   // Destructure product data
@@ -48,6 +49,11 @@ const ProductMobile = () => {
       <div className="product">
         <div className="container">
           <div className="columns is-mobile is-multiline is-centered">
+            {/* Product navbar */}
+            <div className="column is-10-mobile is-10-tablet is-12-desktop">
+              <Navbar />
+            </div>
+
             {/* Product mobile image */}
             <ProductMobileImage />
 

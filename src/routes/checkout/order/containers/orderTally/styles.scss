@@ -5,6 +5,14 @@
   padding-top: 1.75rem;
 }
 
+.order-tally__loader {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .order-tally__row {
   display: flex;
   flex-direction: row;

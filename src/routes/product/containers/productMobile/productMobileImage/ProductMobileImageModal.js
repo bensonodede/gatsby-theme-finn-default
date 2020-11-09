@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
-import { forceCheck } from "react-lazyload";
+import SwiperCore, { Lazy } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import components
 import { ImageModal } from "components/modal";
@@ -11,41 +11,20 @@ import { androidClose } from "react-icons-kit/ionicons/androidClose";
 const ProductMobileImageModal = ({
   toggleModal,
   isOpen,
-  currentIndex,
+  currentImgSlide,
   imgUrls,
   name,
 }) => {
-  // Force load images
-  useEffect(() => {
-    setTimeout(() => {
-      forceCheck();
-    }, 1000);
-  }, []);
+  // Install Swiper components
+  SwiperCore.use([Lazy]);
 
   // Track current slide index state
-  const [currentModalSlide, setCurrentModalSlide] = useState(currentIndex + 1);
+  const [currentModalSlide, setCurrentModalSlide] = useState(currentImgSlide);
 
+  // Set current slide
   useEffect(() => {
-    setCurrentModalSlide(currentIndex + 1);
-  }, [isOpen]);
-
-  // React slick carousel settings
-  const slickSettings = {
-    lazyLoad: "progressive",
-    arrows: false,
-    dots: false,
-    infinite: false,
-    initialSlide: currentIndex,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    touchThreshold: 10,
-    adaptiveHeight: true,
-    className: "product-mobile__img-modal-slider",
-    beforeChange: (oldIndex, newIndex) => {
-      setCurrentModalSlide(newIndex + 1);
-    },
-  };
+    setCurrentModalSlide(currentImgSlide);
+  }, [currentImgSlide]);
 
   return (
     <>
@@ -62,24 +41,31 @@ const ProductMobileImageModal = ({
       {/* Image modal slide count */}
       {isOpen && (
         <div className="product-mobile__img-modal-slider-counter">
-          {currentModalSlide} / {imgUrls.length}
+          {currentModalSlide + 1} / {imgUrls.length}
         </div>
       )}
 
       {/* Image  modal */}
       <ImageModal isOpen={isOpen} toggleModal={null}>
-        {/* Image modal slider */}
-        <Slider {...slickSettings}>
+        <Swiper
+          initialSlide={currentModalSlide}
+          spaceBetween={10}
+          slidesPerView={1}
+          onSlideChange={({ activeIndex }) => setCurrentModalSlide(activeIndex)}
+          lazy={{ loadPrevNext: true }}
+        >
           {imgUrls.map((imgUrl) => (
-            <div key={imgUrl} className={"product-mobile__img-modal-container"}>
-              <ImgLoader
-                src={imgUrl}
-                alt={name}
-                className={"product-mobile__img-modal"}
-              />
-            </div>
+            <SwiperSlide key={imgUrl}>
+              <div className={"product-mobile__img-modal-container"}>
+                <ImgLoader
+                  src={imgUrl}
+                  alt={name}
+                  className={"product-mobile__img-modal"}
+                />
+              </div>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </ImageModal>
     </>
   );
