@@ -46,7 +46,7 @@ const ProductDesktopPolicy = () => {
       <div className="product-desktop__policy">
         {/* Delivery policy item */}
         <ProductDesktopPolicyItem
-          title={"Delivery/Pickup"}
+          title={"Delivery"}
           emoji={"🚚"}
           policy={policyDelivery}
         />

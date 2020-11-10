@@ -46,7 +46,7 @@ const ProductMobilePolicy = () => {
       <>
         {/* Delivery policy item */}
         <ProductMobilePolicyItem
-          title={"Delivery/Pickup"}
+          title={"Delivery"}
           emoji={"🚚"}
           policy={policyDelivery}
         />

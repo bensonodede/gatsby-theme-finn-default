@@ -33,9 +33,17 @@
 }
 
 .product-options__field {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-  gap: 0.75rem 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ----- Flexbox gap: ----- */
+
+.product-options__field > * {
+  margin: 5px;
+}
+.product-options__field {
+  margin: -5px;
 }
 
 // Product footer
