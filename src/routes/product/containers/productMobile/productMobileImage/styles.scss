@@ -34,6 +34,11 @@
   justify-content: center;
 }
 
+.product-mobile__img-modal-container {
+  width: 100%;
+  display: flex;
+}
+
 .product-mobile__img-modal {
   object-fit: contain;
   width: 100%;
