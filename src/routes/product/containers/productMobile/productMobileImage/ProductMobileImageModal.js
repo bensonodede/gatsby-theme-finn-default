@@ -60,6 +60,7 @@ const ProductMobileImageModal = ({
                 <ImgLoader
                   src={imgUrl}
                   alt={name}
+                  loadingClassName={"product-mobile__img-modal"}
                   className={"product-mobile__img-modal"}
                 />
               </div>

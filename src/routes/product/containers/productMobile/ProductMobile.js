@@ -8,15 +8,19 @@ import ProductDataContext from "../../ProductDataContext";
 import Bag from "components/bag";
 import { useModal } from "components/modal";
 import { SuccessToast } from "components/toast";
+import Navbar from "components/navbar";
+import ProductMobileHeader from "./ProductMobileHeader";
 import ProductMobileImage from "./productMobileImage";
-import ProductMobileDescription from "./productMobileDescription";
+import ProductMobileDescription from "./ProductMobileDescription";
 import ProductMobilePolicy from "./productMobilePolicy";
 import ProductMobileFooter from "./productMobileFooter";
 import ProductOptionsModal from "../productOptionsModal";
 
 // Import functions
 import { getTotalQuantity } from "../utils";
-import Navbar from "components/navbar";
+
+// Import styles
+import "./styles.scss";
 
 const ProductMobile = () => {
   // Destructure product data
@@ -39,7 +43,7 @@ const ProductMobile = () => {
       {/* Page title */}
       <Helmet
         title={`${name} · ${process.env.GATSBY_STORE_NAME}`}
-        defer={false}
+        defer={true}
       />
 
       {/* Bag */}
@@ -52,6 +56,11 @@ const ProductMobile = () => {
             {/* Product navbar */}
             <div className="column is-10-mobile is-10-tablet is-12-desktop">
               <Navbar />
+            </div>
+
+            {/* Product mobile header */}
+            <div className="column is-10-mobile">
+              <ProductMobileHeader />
             </div>
 
             {/* Product mobile image */}

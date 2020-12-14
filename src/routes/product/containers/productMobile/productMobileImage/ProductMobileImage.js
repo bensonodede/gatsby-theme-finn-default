@@ -26,7 +26,7 @@ const ProductMobileImage = () => {
 
   return (
     <div
-      className={`column is-10-mobile is-paddingless product-mobile__img-slider-wrapper${
+      className={`column is-11-mobile is-paddingless product-mobile__img-slider-wrapper${
         imgUrls.length === 1
           ? " product-mobile__img-slider-wrapper--single-img"
           : ""
@@ -34,7 +34,7 @@ const ProductMobileImage = () => {
     >
       {/* Swiper slider */}
       <Swiper
-        spaceBetween={10}
+        spaceBetween={18}
         slidesPerView={1}
         onSlideChange={({ activeIndex }) => setCurrentImgSlide(activeIndex)}
         lazy={{ loadPrevNext: true }}
@@ -42,19 +42,17 @@ const ProductMobileImage = () => {
       >
         {imgUrls.map((imgUrl) => (
           <SwiperSlide key={imgUrl}>
-            {({ isActive }) => (
-              <div
-                // prettier-ignore
-                className={`product-mobile__img-container${isActive ? " product-mobile__img-container--active" : ""}`}
-                onClick={() => toggleModal()}
-              >
-                <ImgLoader
-                  src={imgUrl}
-                  alt={name}
-                  className={`product-mobile__img`}
-                />
-              </div>
-            )}
+            <div
+              className={"product-mobile__img-container"}
+              onClick={toggleModal}
+            >
+              <ImgLoader
+                src={imgUrl}
+                alt={name}
+                loadingClassName={"product-mobile__img"}
+                className={"product-mobile__img"}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

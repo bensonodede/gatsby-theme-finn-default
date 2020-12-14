@@ -1,5 +1,3 @@
-import isCacheImg from "./isCacheImg";
-
 const parseImgUrl = ({ transform, src }) => {
   // Get position of 'upload/' in link
   let position = src.indexOf("upload/") + 7;
@@ -18,9 +16,6 @@ const parseImgUrl = ({ transform, src }) => {
     src.slice(position),
   ].join("");
 
-  // Check if image is in cache
-  const cached = isCacheImg(image);
-
   // Poor quality image placeholder transform
   let placeholder = [
     src.slice(0, position),
@@ -28,7 +23,7 @@ const parseImgUrl = ({ transform, src }) => {
     src.slice(position),
   ].join("");
 
-  return { image, cached, placeholder };
+  return { image, placeholder };
 };
 
 export default parseImgUrl;

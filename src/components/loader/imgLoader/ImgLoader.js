@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import LazyLoad, { forceCheck } from "react-lazyload";
-import ExifOrientationImg from "react-exif-orientation-img";
+import React from "react";
+import ProgressiveImage from "react-progressive-graceful-image";
 
 // Import functions
 import parseImgUrl from "./parseImgUrl";
@@ -13,99 +12,25 @@ const ImgLoader = ({
   src,
   alt,
   className,
-  onLoad,
-  overflow = false,
-  forceCheckImg = false,
-  height = "100%",
+  loadingClassName = "",
 }) => {
-  // Track component mounted state
-  const _isMounted = useRef(false);
-
-  // Component state
-  const [placeholderLoaded, setPlaceholderLoaded] = useState(false);
-  const [images, setImages] = useState({
-    image: "",
-    cached: false,
-    placeholder: "",
-  });
-
-  const [loaded, setLoaded] = useState(false);
-
-
-  useEffect(() => {
-    // On component mounted, set mounted state to true
-    _isMounted.current = true;
-
-    // Parse image url
-    const { image, cached, placeholder } = parseImgUrl({ transform, src });
-
-    // Set placeholder and image to state
-    if (_isMounted.current) {
-      setImages({ image, cached, placeholder });
-
-      // Force Load
-      if (forceCheckImg) {
-        setTimeout(() => {
-          forceCheck();
-        }, 1000);
-
-        // Listen for scroll to check if image is in view
-        window.addEventListener("scroll", forceCheck());
-      }
-    }
-
-    // On component Unmount
-    return () => {
-      // Set unmounted state to false
-      _isMounted.current = false;
-
-      // Remove scroll event listener
-      if (forceCheckImg) {
-        window.removeEventListener("scroll", forceCheck());
-      }
-    };
-  }, [src, transform]);
-
-  // Destructure image state
-  let { cached, image, placeholder } = images;
+  // Parse image url
+  const { image, placeholder } = parseImgUrl({ transform, src });
 
   return (
-    <>
-      {/* Placeholder image */}
-      {!loaded && !cached && (
-        <LazyLoad overflow={overflow} height={height}>
-          <ExifOrientationImg
-            onLoad={() => {
-              if (_isMounted.current) {
-                setPlaceholderLoaded(true);
-              }
-            }}
-            alt={alt}
-            src={placeholder}
-            className={`img__placeholder ${className}`}
-          />
-        </LazyLoad>
+    <ProgressiveImage src={image} placeholder={placeholder}>
+      {(src, loading) => (
+        <img
+          src={src}
+          alt={alt}
+          className={
+            loading
+              ? `img__loading ${loadingClassName}`
+              : `img__loaded ${className}`
+          }
+        />
       )}
-
-      {/* Once placeholder is fully loaded, begin to load optimal image */}
-      {(placeholderLoaded || cached) && (
-        <LazyLoad once={true} height={height} overflow={overflow}>
-          <ExifOrientationImg
-            onLoad={() => {
-              if (_isMounted.current) {
-                setLoaded(true);
-                if(onLoad){
-                  onLoad()
-                }
-              }
-            }}
-            alt={alt}
-            src={image}
-            className={loaded ? `img__loaded ${className}` : `img__loading`}
-          />
-        </LazyLoad>
-      )}
-    </>
+    </ProgressiveImage>
   );
 };
 
